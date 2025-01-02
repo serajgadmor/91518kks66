@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحة الأولى</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #ff7f7f, #ffb6c1);
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            font-size: 48px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        p {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        input[type="date"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: 2px solid #ffb6c1;
+            background-color: #fff;
+        }
+        button {
+            background-color: #ff7f7f;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff4c4c;
+        }
+        #message {
+            color: #ff4c4c;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>مرحباً!</h1>
+        <p>ما هو تاريخ الحب الذي عرفتك فيه؟</p>
+        <input type="date" id="dateInput">
+        <br><br>
+        <button onclick="checkDate()">تم</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function checkDate() {
+            const inputDate = document.getElementById("dateInput").value;
+            const correctDate = "2024-01-02";
+            if (inputDate === correctDate) {
+                window.location.href = "love.html";
+            } else {
+                document.getElementById("message").textContent = "هذا ليس تاريخ الحب الذي عرفتك فيه يا كلثوم . التاريخ هو 2024-1-2 ممكن يختلف الشهر ادخاله هوا الاول";
+            }
+        }
+    </script>
+</body>
+</html>
